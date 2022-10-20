@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style>
+            .chess-board { border-spacing: 0; border-collapse: collapse; }
+            .chess-board th { padding: .5em; }
+            .chess-board td { border: 2px solid; width: 4em; height: 4em; }
+            .chess-board .light { background: rgb(194, 156, 123); }
+            .chess-board .dark { background: rgb(49, 41, 3); }
+        </style>
+    </head>
+    <script src="index.js"></script>
+
+    <body>
+        <table class="chess-board">
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td class="light 18" id="18"><img src="blackRook.png" alt="" onclick="CalculatePossibleMoves('blackRook1')" ></td>
+                    <td class="dark 28" id="28"><img src="blackKnight.png" alt="" onclick="CalculatePossibleMoves('blackKnight1')"></td>
+                    <td class="light 38" id="38"><img src="blackBishop.png" alt="" onclick="CalculatePossibleMoves('blackBishop2')"></td>
+                    <td class="dark 48" id="48"><img src="blackQueen.png" alt="" onclick="CalculatePossibleMoves('blackQueen')"></td>
+                    <td class="light 58" id="58"><img src="blackKing.png" alt="" onclick="CalculatePossibleMoves('blackKing')" ></td>
+                    <td class="dark 68"id="68"><img src="blackBishop.png" alt="" onclick="CalculatePossibleMoves('blackBishop1')"></td>
+                    <td class="light 78"id="78"><img src="blackKnight.png" alt="" onclick="CalculatePossibleMoves('blackKnight2')" ></td>
+                    <td class="dark 88" id="88"><img src="blackRook.png" alt="" onclick="CalculatePossibleMoves('blackRook2')" ></td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td class="dark 17" id="17"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn1')" ></td>
+                    <td class="light 27" id="27"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn2')" ></td>
+                    <td class="dark 37" id="37"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn3')" ></td>
+                    <td class="light 47" id="47"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn4')" ></td>
+                    <td class="dark 57" id="57"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn5')" ></td>
+                    <td class="light 67" id="67"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn6')" ></td>
+                    <td class="dark 77" id="77"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn7')" ></td>
+                    <td class="light 87" id="87"><img src="blackPawn.png" alt="" onclick="CalculatePossibleMoves('blackPawn8')" ></td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td class="light 16" id="16"></td>
+                    <td class="dark 26" id="26"></td>
+                    <td class="light 36" id="36"</td>
+                    <td class="dark 46" id="46"></td>
+                    <td class="light 56" id="56"></td>
+                    <td class="dark 66" id="66"></td>
+                    <td class="light 76" id="76"></td>
+                    <td class="dark 86" id="86"></td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td class="dark 15" id="15"></td>
+                    <td class="light 25" id="25"></td>
+                    <td class="dark 35" id="35"></td>
+                    <td class="light 45" id="45"></td>
+                    <td class="dark 55" id="55"></td>
+                    <td class="light 65" id="65"></td>
+                    <td class="dark 75" id="75"></td>
+                    <td class="light 85" id="85"></td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td class="light 14" id="14"></td>
+                    <td class="dark 24" id="24"></td>
+                    <td class="light 34" id="34"></td>
+                    <td class="dark 44" id="44"></td>
+                    <td class="light 54" id="54"></td>
+                    <td class="dark 64" id="64"></td>
+                    <td class="light 74" id="74"></td>
+                    <td class="dark 84" id="84"></td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td class="dark 13" id="13"></td>
+                    <td class="light 23" id="23"></td>
+                    <td class="dark 33" id="33"></td>
+                    <td class="light 43" id="43"></td>
+                    <td class="dark 53" id="53"></td>
+                    <td class="light 63" id="63"></td>
+                    <td class="dark 73" id="73"></td>
+                    <td class="light 83" id="83"></td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td class="light 12" id="12"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn1')" ></td>
+                    <td class="dark 22" id="22"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn2')" ></td>
+                    <td class="light 32" id="32"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn3')" ></td>
+                    <td class="dark 42" id="42"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn4')" ></td>
+                    <td class="light 52" id="52"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn5')" ></td>
+                    <td class="dark 62" id="62"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn6')" ></td>
+                    <td class="light 72" id="72"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn7')" ></td>
+                    <td class="dark 82" id="82"><img src="whitePawn.png" alt="" onclick="CalculatePossibleMoves('whitePawn8')" ></td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td class="dark 11" id="11"><img src="whiteRook.png" alt="" onclick="CalculatePossibleMoves('whiteRook2')" ></td>
+                    <td class="light 21" id="21"><img src="whiteKnight.png" alt="" onclick="CalculatePossibleMoves('whiteKnight1')" ></td>
+                    <td class="dark 31" id="31"><img src="whiteBishop.png" alt="" onclick="CalculatePossibleMoves('whiteBishop1')"></td>
+                    <td class="light 41" id="41"><img src="whiteQueen.png" alt="" onclick="CalculatePossibleMoves('whiteQueen')"></td>
+                    <td class="dark 51" id="51"><img src="whiteKing.png" alt="" onclick="CalculatePossibleMoves('whiteKing')"></td>
+                    <td class="light 61" id="61"><img src="whiteBishop.png" alt="" onclick="CalculatePossibleMoves('whiteBishop2')"></td>
+                    <td class="dark 71" id="71"><img src="whiteKnight.png" alt="" onclick="CalculatePossibleMoves('whiteKnight2')" ></td></td>
+                    <td class="light 81" id="81"><img src="whiteRook.png" alt="" onclick="CalculatePossibleMoves('whiteRook1')" ></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+<style>
+    img {
+        position: relative;
+        left: 7px;
+        width: 50px
+    }
+</style>
